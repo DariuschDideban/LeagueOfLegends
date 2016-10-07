@@ -44,8 +44,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import Fragment.MainFragment;
 import Fragment.MapFragment;
 
-//import java.net.HttpURLConnection;
-//import java.net.URL;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
