@@ -83,16 +83,6 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Keine Internet Connection!", Toast.LENGTH_LONG).show();
         }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -172,10 +162,13 @@ public class MainActivity extends AppCompatActivity
             findViewById(R.id.content_main);
 
         } else if (id == R.id.nav_manage) {
+            findViewById(R.id.content_main);
 
         } else if (id == R.id.nav_share) {
+            findViewById(R.id.content_main);
 
         } else if (id == R.id.nav_send) {
+            findViewById(R.id.content_main);
 
         }
 
