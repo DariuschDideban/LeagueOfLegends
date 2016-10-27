@@ -145,23 +145,29 @@ public class MainActivity extends AppCompatActivity
         if (sMapFragment.isAdded())
             sFm.beginTransaction().hide(sMapFragment).commit();
 
-        if (id == R.id.navigation) {
+        if (id == R.id.nav_camera) {
 
             if (!sMapFragment.isAdded())
                 sFm.beginTransaction().add(R.id.map, sMapFragment).commit();
             else
                 sFm.beginTransaction().show(sMapFragment).commit();
 
-        } else if (id == R.id.schedule) {
+        } else if (id == R.id.nav_map) {
 
             // fm.beginTransaction().replace(R.id.content_main, new MainFragment()).commit(); zeile zerstört den counter
             findViewById(R.id.content_main);
 
-        } else if (id == R.id.share) {
+        } else if (id == R.id.nav_slideshow) {
 
             findViewById(R.id.content_main);
 
-        } else if (id == R.id.settings) {
+        } else if (id == R.id.nav_manage) {
+            findViewById(R.id.content_main);
+
+        } else if (id == R.id.nav_share) {
+            findViewById(R.id.content_main);
+
+        } else if (id == R.id.nav_send) {
             findViewById(R.id.content_main);
 
         }
