@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity
             else
                 sFm.beginTransaction().show(sMapFragment).commit();
 
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_map) {
 
             // fm.beginTransaction().replace(R.id.content_main, new MainFragment()).commit(); zeile zerstört den counter
             findViewById(R.id.content_main);
