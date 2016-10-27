@@ -180,7 +180,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="Second"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
                 </LinearLayout>
             </LinearLayout>
 
