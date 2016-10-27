@@ -8,4 +8,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- pic activity_main drawer-->
+    <string name="event_navigation">Navigation</string>
+    <string name="schedule">Schedule</string>
+    <string name="share">Share</string>
+    <string name="settings">Settings</string>
+
 </resources>
