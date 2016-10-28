@@ -41,8 +41,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import Fragment.MainFragment;
+//import Fragment.MainFragment;
+//import Fragment.MapFragment;
 
+//import java.net.HttpURLConnection;
+//import java.net.URL;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
@@ -142,13 +145,14 @@ public class MainActivity extends AppCompatActivity
         if (sMapFragment.isAdded())
             sFm.beginTransaction().hide(sMapFragment).commit();
 
-        if (id == R.id.navigation) {
+        if (id == R.id.nav_camera) {
 
             if (!sMapFragment.isAdded())
                 sFm.beginTransaction().add(R.id.map, sMapFragment).commit();
             else
                 sFm.beginTransaction().show(sMapFragment).commit();
 
+        } else if (id == R.id.nav_map) {
         } else if (id == R.id.schedule) {
 
             findViewById(R.id.content_main);
