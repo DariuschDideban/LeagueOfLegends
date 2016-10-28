@@ -12,7 +12,7 @@
     <!-- pic activity_main_drawer-->
     <string name="information">Information</string>
     <string name="event_navigation">Navigation</string>
-    <string name="schedule">Time table</string>
+    <string name="time_table">Time table</string>
     <string name="share">Share</string>
     <string name="settings">Settings</string>
 

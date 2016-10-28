@@ -7,9 +7,9 @@
             android:icon="@drawable/ic_extension"
             android:title="@string/information" />
         <item
-            android:id="@+id/schedule"
+            android:id="@+id/time_table"
             android:icon="@drawable/ic_menu_schedule"
-            android:title="@string/schedule" />
+            android:title="@string/time_table" />
         <item
             android:id="@+id/navigation"
             android:icon="@drawable/ic_map"

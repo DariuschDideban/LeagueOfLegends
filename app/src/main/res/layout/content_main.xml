@@ -180,12 +180,7 @@
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
                         android:text="Second"
-<<<<<<<<< Temporary merge branch 1
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
-=========
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textColor="#ff000000" />
->>>>>>>>> Temporary merge branch 2
+                        android:textColor="#ff000000"/>
                 </LinearLayout>
             </LinearLayout>
 

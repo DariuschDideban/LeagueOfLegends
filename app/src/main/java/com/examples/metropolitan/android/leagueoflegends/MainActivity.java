@@ -141,21 +141,21 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        //so long a different fragment is shown hide the map
-        if (sMapFragment.isAdded())
+        if (id == R.id.information) {
+
+            findViewById(R.id.information_main);
+
+        } else if (id == R.id.time_table) {
+
+        }if (sMapFragment.isAdded()) {
             sFm.beginTransaction().hide(sMapFragment).commit();
 
-        if (id == R.id.nav_camera) {
+        } else if (id == R.id.navigation) {
 
             if (!sMapFragment.isAdded())
                 sFm.beginTransaction().add(R.id.map, sMapFragment).commit();
             else
                 sFm.beginTransaction().show(sMapFragment).commit();
-
-        } else if (id == R.id.nav_map) {
-        } else if (id == R.id.schedule) {
-
-            findViewById(R.id.content_main);
 
         } else if (id == R.id.share) {
 
@@ -165,9 +165,6 @@ public class MainActivity extends AppCompatActivity
 
             findViewById(R.id.content_main);
 
-        } else if (id == R.id.information){
-
-            findViewById(R.id.information_main);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
