@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/information_main"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/darkgrey">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="63dp"
+            app:srcCompat="@drawable/ic_alarm"
+            android:id="@+id/imageView3" />
+
+        <TextView
+            android:text="Sunday, November 20 2016 Eventstart : 12:00 a.m."
+            android:fontFamily="sans-serif"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView3"
+            android:textSize="24sp"
+            android:textStyle="normal|bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/grey">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="63dp"
+            app:srcCompat="@drawable/ic_location_on"
+            android:id="@+id/imageView4" />
+
+        <TextView
+            android:text="Vanha maantie 6 Leppävaara, Etelä-Suomen Lääni, Finland"
+            android:textSize="24sp"
+            android:textStyle="normal|bold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/purple">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="63dp"
+            app:srcCompat="@drawable/ic_local_atm"
+            android:id="@+id/imageView5" />
+
+        <TextView
+            android:text="Entrance Ticket without Lan: 2,50 Euro
+Entrance Ticket with Lan:
+10 Euro"
+            android:textSize="24sp"
+            android:textStyle="normal|bold"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView4" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -3,12 +3,16 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/information"
+            android:icon="@drawable/ic_extension"
+            android:title="@string/information" />
+        <item
             android:id="@+id/schedule"
             android:icon="@drawable/ic_menu_schedule"
             android:title="@string/schedule" />
         <item
             android:id="@+id/navigation"
-            android:icon="@drawable/ic_menu_navigation"
+            android:icon="@drawable/ic_map"
             android:title="@string/event_navigation" />
         <item
             android:id="@+id/share"
@@ -19,6 +23,4 @@
             android:icon="@drawable/ic_menu_settings"
             android:title="@string/settings" />
     </group>
-
-
 </menu>

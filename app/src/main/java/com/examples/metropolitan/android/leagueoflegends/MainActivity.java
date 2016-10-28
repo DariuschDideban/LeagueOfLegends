@@ -41,11 +41,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-//import Fragment.MainFragment;
-//import Fragment.MapFragment;
+import Fragment.MainFragment;
 
-//import java.net.HttpURLConnection;
-//import java.net.URL;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
@@ -93,7 +90,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         android.app.FragmentManager fm = getFragmentManager();
-        // fm.beginTransaction().replace(R.id.content_main, new MainFragment()).commit();
+        //fm.beginTransaction().replace(R.id.content_main, new MainFragment()).commit();
 
         sMapFragment.getMapAsync(this);
 
@@ -154,7 +151,6 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.schedule) {
 
-            // fm.beginTransaction().replace(R.id.content_main, new MainFragment()).commit(); zeile zerstört den counter
             findViewById(R.id.content_main);
 
         } else if (id == R.id.share) {
@@ -162,8 +158,12 @@ public class MainActivity extends AppCompatActivity
             findViewById(R.id.content_main);
 
         } else if (id == R.id.settings) {
+
             findViewById(R.id.content_main);
 
+        } else if (id == R.id.information){
+
+            findViewById(R.id.information_main);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
