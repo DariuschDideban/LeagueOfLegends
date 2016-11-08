@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity
 
     SupportMapFragment sMapFragment;
 
+    //Blablabla
+
     private TextView tvDay, tvHour, tvMinute, tvSecond, tvEvent;
     private LinearLayout linearLayout1, linearLayout2;
     private Handler handler;
