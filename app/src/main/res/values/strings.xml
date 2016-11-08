@@ -19,4 +19,7 @@
     <!-- information_main -->
     <string name="alarm">Alarm</string>
 
+    <!-- nav_header_main -->
+    <string name="Subtitle">Unigames 2016</string>
+
 </resources>
