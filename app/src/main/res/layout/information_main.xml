@@ -11,13 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/darkgrey">
+        android:background="@color/white">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="63dp"
             app:srcCompat="@drawable/ic_alarm"
-            android:id="@+id/imageView3" />
+            android:id="@+id/imageView3"
+            android:foregroundGravity="center" />
 
         <TextView
             android:text="Sunday, November 20 2016 Eventstart : 12:00 a.m."
@@ -35,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/grey">
+        android:background="@color/white">
 
         <ImageView
             android:layout_width="50dp"
@@ -58,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="@color/purple">
+        android:background="@color/white">
 
         <ImageView
             android:layout_width="50dp"
