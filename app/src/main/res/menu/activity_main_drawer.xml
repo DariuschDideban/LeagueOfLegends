@@ -18,9 +18,5 @@
             android:id="@+id/share"
             android:icon="@drawable/ic_menu_share"
             android:title="@string/share" />
-        <item
-            android:id="@+id/settings"
-            android:icon="@drawable/ic_menu_settings"
-            android:title="@string/settings" />
     </group>
 </menu>

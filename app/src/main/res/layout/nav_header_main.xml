@@ -16,11 +16,11 @@
         android:paddingTop="10dp"/>
 
         <TextView
-            android:text="@string/Subtitle"
+            android:text="@string/subtitle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textColor="@color/purple"
-            android:textSize="35dp"
+            android:textSize="30dp"
             android:gravity="bottom|center_horizontal"
             android:id="@+id/textView2" />
 

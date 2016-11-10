@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LeagueOfLegend</string>
+    <string name="app_name">Unigames 2016</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -18,8 +18,11 @@
 
     <!-- information_main -->
     <string name="alarm">Alarm</string>
+    <string name="location">Metropolia Ammattikorkeakoulu\nVanha maantie 6, 02650 Espoo</string>
+    <string name="cash">Entrance Ticket with Lan-Party: 10 €\nEntrance Ticket normal: 2,50 €</string>
+    <string name="time">19. November: 12:00\n-\n20. November: 22:00</string>
 
     <!-- nav_header_main -->
-    <string name="Subtitle">Unigames 2016</string>
+    <string name="subtitle">Unigames 2016</string>
 
 </resources>

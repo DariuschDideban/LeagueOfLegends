@@ -10,7 +10,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.examples.metropolitan.android.leagueoflegends.MainActivity"
     tools:showIn="@layout/app_bar_main"
-    android:background="#ff000000">
+    android:background="#fff">
 
     <FrameLayout
 
@@ -18,24 +18,25 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/unigames_flyer"
-            android:scaleType="centerCrop"
-            android:id="@+id/imageView2" />
+            android:layout_height="@dimen/nav_header_height"
+            android:src="@drawable/unigames_banner"
+            android:id="@+id/imageView2"
+            android:scaleType="centerCrop"/>
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal|top">
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/nav_header_height"
+            android:layout_gravity="top">
 
             <LinearLayout
                 android:id="@+id/ll1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone" >
@@ -181,13 +182,91 @@
                         android:gravity="center_horizontal"
                         android:text="Second"
                         android:textColor="#ff000000"/>
+
                 </LinearLayout>
             </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!--Informations -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="285dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_location_on"
+                android:layout_gravity="center"
+                android:id="@+id/imageView6" />
+
+            <TextView
+                android:text="@string/location"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/imageView6"
+                android:gravity="center"
+                android:id="@+id/textView5"/>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-    </FrameLayout>
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_local_atm"
+                android:layout_gravity="center"
+                android:id="@+id/imageView7" />
+
+            <TextView
+                android:text="@string/cash"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/imageView7"
+                android:gravity="center"
+                android:id="@+id/textView6"
+                android:layout_weight="5" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/border"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_query_builder"
+                android:layout_gravity="center"
+                android:id="@+id/imageView8" />
+
+            <TextView
+                android:text="@string/time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/imageView8"
+                android:gravity="center"
+                android:id="@+id/textView7" />
+        </LinearLayout>
+    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/map"

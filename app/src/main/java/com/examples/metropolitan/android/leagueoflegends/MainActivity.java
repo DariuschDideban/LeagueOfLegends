@@ -35,9 +35,12 @@ import android.widget.Toast;
 import android.net.NetworkInfo;
 import android.net.ConnectivityManager;
 
+import com.google.android.gms.games.event.Event;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -51,8 +54,6 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
 
     SupportMapFragment sMapFragment;
-
-    //Blablabla
 
     private TextView tvDay, tvHour, tvMinute, tvSecond, tvEvent;
     private LinearLayout linearLayout1, linearLayout2;
@@ -79,10 +80,10 @@ public class MainActivity extends AppCompatActivity
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
             //we are connected to a network
             //connected = true;
-            Toast.makeText(this, "Internet Connection vorhanden!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Internet Connection available!", Toast.LENGTH_LONG).show();
         } else {
             //connected = false;
-            Toast.makeText(this, "Keine Internet Connection!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "No Internet Connection!", Toast.LENGTH_LONG).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -133,6 +134,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    //content of activity_main
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -143,37 +145,35 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.information) {
-
-            findViewById(R.id.information_main);
-
-        } else if (id == R.id.time_table) {
-
-        }if (sMapFragment.isAdded()) {
+        if (sMapFragment.isAdded())
             sFm.beginTransaction().hide(sMapFragment).commit();
 
-        } else if (id == R.id.navigation) {
+            if (id == R.id.information) {
 
-            if (!sMapFragment.isAdded())
-                sFm.beginTransaction().add(R.id.map, sMapFragment).commit();
-            else
-                sFm.beginTransaction().show(sMapFragment).commit();
+                findViewById(R.id.content_main);
+            } else if (id == R.id.time_table) {
 
-        } else if (id == R.id.share) {
+                findViewById(R.id.content_main);
 
-            findViewById(R.id.content_main);
+            } else if (id == R.id.navigation) {
 
-        } else if (id == R.id.settings) {
+                if (!sMapFragment.isAdded())
+                    sFm.beginTransaction().add(R.id.map, sMapFragment).commit();
+                else
+                    sFm.beginTransaction().show(sMapFragment).commit();
 
-            findViewById(R.id.content_main);
+            } else if (id == R.id.share) {
 
+                findViewById(R.id.content_main);
+            }
+
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 
+    // //////////////COUNT DOWN START/////////////////////////
     @SuppressLint("SimpleDateFormat")
     private void initUI() {
         linearLayout1 = (LinearLayout) findViewById(R.id.ll1);
@@ -185,7 +185,6 @@ public class MainActivity extends AppCompatActivity
         tvEvent = (TextView) findViewById(R.id.tvevent);
     }
 
-    // //////////////COUNT DOWN START/////////////////////////
     public void countDownStart() {
         handler = new Handler();
         runnable = new Runnable() {
@@ -227,24 +226,16 @@ public class MainActivity extends AppCompatActivity
         handler.postDelayed(runnable, 0);
     }
 
+    // //////////////COUNT DOWN END/////////////////////////
+
     @Override
     public void onMapReady(GoogleMap mMap) {
 
-
-
         // change the map here!!!
-        mMap.addMarker(new MarkerOptions().position(new LatLng(60.174252, 24.929256)).title("Event"));
+        LatLng eventMarker = new LatLng(60.220878, 24.804907);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(eventMarker, 13));
+        mMap.addMarker(new MarkerOptions().position(eventMarker).title("Unigames").icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
 
 
     }
-
-    }
-
-    // //////////////COUNT DOWN END/////////////////////////
-
-
-
-
-
-
-
+}
