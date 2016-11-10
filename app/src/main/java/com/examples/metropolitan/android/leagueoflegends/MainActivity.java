@@ -1,14 +1,11 @@
 package com.examples.metropolitan.android.leagueoflegends;
 
-import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentManager;
+import android.content.Intent;
+
 import android.content.Context;
-import android.content.DialogInterface;
+
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentActivity;
+
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,21 +18,19 @@ import android.view.MenuItem;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Map;
+
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
+
 import android.os.Handler;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 //Internet Connection
 import android.net.NetworkInfo;
 import android.net.ConnectivityManager;
 
-import com.google.android.gms.games.event.Event;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -44,14 +39,19 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-//import Fragment.MainFragment;
-//import Fragment.MapFragment;
+//Twitter
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import io.fabric.sdk.android.Fabric;
 
-//import java.net.HttpURLConnection;
-//import java.net.URL;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
+
+    //Keys for Twitter (Fabric)
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "UbRhMtuQSHNXNDqxoUw1TMjat";
+    private static final String TWITTER_SECRET = "NZETaQluxcpQl47AOW1foeNPRak8ZYIZQkqKTQ2xQUnBTKUBE0";
 
     SupportMapFragment sMapFragment;
 
@@ -64,27 +64,25 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig));
+
         sMapFragment = SupportMapFragment.newInstance();
 
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         initUI();
         countDownStart();
 
-        boolean connected = false;
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+        if ((connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED) ||
+                (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED)) {
             //we are connected to a network
-            //connected = true;
-            Toast.makeText(this, "Internet Connection available!", Toast.LENGTH_LONG).show();
-        } else {
-            //connected = false;
-            Toast.makeText(this, "No Internet Connection!", Toast.LENGTH_LONG).show();
-        }
+
+        }else
+            Toast.makeText(this, "Please check connection!", Toast.LENGTH_LONG).show();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -95,8 +93,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        android.app.FragmentManager fm = getFragmentManager();
-        //fm.beginTransaction().replace(R.id.content_main, new MainFragment()).commit();
 
         sMapFragment.getMapAsync(this);
 
@@ -164,7 +160,7 @@ public class MainActivity extends AppCompatActivity
 
             } else if (id == R.id.share) {
 
-                findViewById(R.id.content_main);
+                startActivity(new Intent(getApplicationContext(), EmbeddedTweetActivity.class));
             }
 
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -35,6 +35,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".EmbeddedTweetActivity" />
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version"/>
@@ -42,6 +44,13 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAppfxfa9mT0u3t5-rMRhc-XyTUc4yV8Rc"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAppfxfa9mT0u3t5-rMRhc-XyTUc4yV8Rc"/>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="c23f497621e8a617207779d44cf2281458750a5b" />
 
     </application>
 
