@@ -16,11 +16,22 @@
     <string name="share">Share</string>
     <string name="settings">Settings</string>
 
-    <!-- information_main -->
+    <!-- content_main -->
     <string name="alarm">Alarm</string>
     <string name="location">Metropolia Ammattikorkeakoulu\nVanha maantie 6, 02650 Espoo</string>
     <string name="cash">Entrance Ticket with Lan-Party: 10 €\nEntrance Ticket normal: 2,50 €</string>
     <string name="time">19. November: 12:00\n-\n20. November: 22:00</string>
+    <string name="info_unigames">Unigames is a new gaming event targeted
+        \nfor all university students in Helsinki
+        \nmetropolitan area. Take part and challenge
+        \nyour friends in different games and
+        \ncompetitions to win some prizes. The
+        \nevent culminates into a League of Legends
+        \ntournament finale. Qualification matches
+        \nwill be played online during previous weeks.
+        \nAll university students are allowed to take
+        \npart on the tournament, but you don’t have
+        \nto play the game to attend the event.</string>
 
     <!-- nav_header_main -->
     <string name="subtitle">Unigames 2016</string>
