@@ -4,6 +4,7 @@ import android.content.Intent;
 
 import android.content.Context;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.view.View;
@@ -31,6 +32,11 @@ import android.widget.Toast;
 import android.net.NetworkInfo;
 import android.net.ConnectivityManager;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareDialog;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -43,6 +49,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import io.fabric.sdk.android.Fabric;
+import retrofit2.http.Url;
 
 
 public class MainActivity extends AppCompatActivity
@@ -59,6 +66,8 @@ public class MainActivity extends AppCompatActivity
     private LinearLayout linearLayout1, linearLayout2;
     private Handler handler;
     private Runnable runnable;
+    CallbackManager callbackManager;
+    ShareDialog shareDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +75,11 @@ public class MainActivity extends AppCompatActivity
 
         TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
         Fabric.with(this, new Twitter(authConfig));
+
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this);
+        shareDialog = new ShareDialog(this);
 
         sMapFragment = SupportMapFragment.newInstance();
 
@@ -161,6 +175,18 @@ public class MainActivity extends AppCompatActivity
             } else if (id == R.id.share) {
 
                 startActivity(new Intent(getApplicationContext(), EmbeddedTweetActivity.class));
+            } else if (id == R.id.facebook){
+               // startActivity(new Intent(getApplicationContext(), FacebookActivity.class));
+                if (ShareDialog.canShow(ShareLinkContent.class)) {
+                    ShareLinkContent linkContent = new ShareLinkContent.Builder()
+                            .setContentTitle("Unigames 2016")
+                            .setContentDescription(
+                                    "University gaming event and LAN competition")
+                            .setContentUrl(Uri.parse("https://www.facebook.com/unigamesfin/?fref=ts"))
+                            .build();
+
+                    shareDialog.show(linkContent);
+                }
             }
 
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
