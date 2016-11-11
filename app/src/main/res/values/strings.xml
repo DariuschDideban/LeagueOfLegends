@@ -35,4 +35,7 @@
     <!-- nav_header_main -->
     <string name="subtitle">Unigames 2016</string>
 
+    <!-- timetable_main -->
+    <string name="date1">Friday 11.11.2016</string>
+
 </resources>
