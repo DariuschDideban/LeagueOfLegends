@@ -13,7 +13,8 @@
     <string name="information">Information</string>
     <string name="event_navigation">Navigation</string>
     <string name="time_table">Time table</string>
-    <string name="share">Share</string>
+    <string name="share">Twitter</string>
+    <string name="facebook">Facebook</string>
 
     <!-- content_main -->
     <string name="alarm">Alarm</string>
@@ -38,4 +39,6 @@
     <!-- timetable_main -->
     <string name="date1">Friday 11.11.2016</string>
 
+    <!-- facebook -->
+    <string name="facebook_app_id">1737608593229075</string>
 </resources>
