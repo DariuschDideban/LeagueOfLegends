@@ -221,6 +221,7 @@
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/imageView6"
                     android:gravity="center"
+                    android:textColor="@android:color/black"
                     android:id="@+id/textView5"/>
 
             </LinearLayout>
@@ -244,6 +245,7 @@
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/imageView7"
                     android:gravity="center"
+                    android:textColor="@android:color/black"
                     android:id="@+id/textView6"
                     android:layout_weight="5" />
 
@@ -267,6 +269,7 @@
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/imageView8"
                     android:gravity="center"
+                    android:textColor="@android:color/black"
                     android:id="@+id/textView7" />
             </LinearLayout>
 
@@ -288,7 +291,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@+id/imageView3"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    android:textColor="@android:color/black"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

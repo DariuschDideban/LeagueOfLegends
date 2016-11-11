@@ -42,6 +42,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 //Twitter
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
+
+import Fragment.TimeTableFragment;
 import io.fabric.sdk.android.Fabric;
 
 
@@ -108,28 +110,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     //content of activity_main
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -147,9 +127,12 @@ public class MainActivity extends AppCompatActivity
             if (id == R.id.information) {
 
                 findViewById(R.id.content_main);
+
             } else if (id == R.id.time_table) {
 
                 findViewById(R.id.content_main);
+
+                //sFm.beginTransaction().add(R.id.time_table, )
 
             } else if (id == R.id.navigation) {
 
