@@ -15,6 +15,10 @@
             android:icon="@drawable/ic_map"
             android:title="@string/event_navigation" />
         <item
+            android:id="@+id/livestream"
+            android:icon="@drawable/cast_ic_expanded_controller_play"
+            android:title="@string/livestream"/>
+        <item
             android:id="@+id/share"
             android:icon="@drawable/ic_facebook"
             android:title="@string/share" />

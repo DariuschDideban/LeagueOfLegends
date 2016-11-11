@@ -143,10 +143,8 @@ public class MainActivity extends AppCompatActivity
                 findViewById(R.id.content_main);
 
             } else if (id == R.id.time_table) {
-
-                findViewById(R.id.content_main);
-
-                //sFm.beginTransaction().add(R.id.time_table, )
+                
+                getSupportFragmentManager().findFragmentById(R.id. time_table);
 
             } else if (id == R.id.navigation) {
 
@@ -154,6 +152,10 @@ public class MainActivity extends AppCompatActivity
                     sFm.beginTransaction().add(R.id.map, sMapFragment).commit();
                 else
                     sFm.beginTransaction().show(sMapFragment).commit();
+
+            } else if (id == R.id.livestream){
+
+                startActivity(new Intent(getApplicationContext(),StreamTwitch.class));
 
             } else if (id == R.id.share) {
 

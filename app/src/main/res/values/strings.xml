@@ -15,6 +15,8 @@
     <string name="time_table">Time table</string>
     <string name="share">Twitter</string>
     <string name="facebook">Facebook</string>
+    <string name="livestream">Live stream</string>
+
 
     <!-- content_main -->
     <string name="alarm">Alarm</string>

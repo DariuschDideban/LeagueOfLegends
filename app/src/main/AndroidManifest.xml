@@ -36,6 +36,7 @@
         </activity>
 
         <activity android:name=".EmbeddedTweetActivity" />
+        <activity android:name=".StreamTwitch"/>
 
         <meta-data
             android:name="com.google.android.gms.version"
